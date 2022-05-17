@@ -136,4 +136,3 @@ MEDIA_URL = '/files/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #act
-django_heroku.settings(locals())
