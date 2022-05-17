@@ -28,7 +28,7 @@ DEBUG = False
 
 
 ALLOWED_HOSTS = [
-    'sampledomain.com', '127.0.0.1'
+    'web-site-rana.herokuapp.com/', '127.0.0.1'
 ]
 
 # Application definition
