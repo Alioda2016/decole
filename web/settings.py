@@ -24,11 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-e2z5#(k2a(ia3+$_s2uag7lxwj)9it!wv9(^@l0)h3d)mz#y_&'
 # s = getenv("secret_key")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv("IS_DEVELOPMENT", True)
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    getenv("APP_HOST"),
-    'localhost', '127.0.0.1'
+    'sampledomain.com', '127.0.0.1'
 ]
 
 # Application definition
@@ -45,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
