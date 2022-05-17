@@ -1,0 +1,37 @@
+
+
+
+
+
+
+
+
+
+#about {
+  text-align: center;
+  padding: 3rem;
+  background-color: darkolivegreen;
+  margin-top: 5rem;
+}
+
+#about h2 {
+  font-size: 3rem;
+}
+
+#about p {
+  font-size: 1.5rem;
+  color: #353535;
+}
+
+.image{
+  margin-left: 0.9rem;
+}
+
+form button{
+  margin-left: 25rem;
+}
+
+.image-result{
+  text-align: center;
+  border-radius: 4px;
+}
