@@ -24,11 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-e2z5#(k2a(ia3+$_s2uag7lxwj)9it!wv9(^@l0)h3d)mz#y_&'
 # s = getenv("secret_key")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
+DEBUG = getenv("IS_DEVELOPMENT", True)
 
 ALLOWED_HOSTS = [
-    'web-site-rana.herokuapp.com/', '127.0.0.1'
+    getenv("APP_HOST"),
+    'localhost', '127.0.0.1'
 ]
 
 # Application definition
@@ -45,7 +45,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -123,8 +122,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+
 MEDIA_ROOT = BASE_DIR / 'uploads'
-MEDIA_URL = '/files/'
+MEDIA_URL = '/uploads/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -132,3 +135,4 @@ MEDIA_URL = '/files/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #act
+django_heroku.settings(locals())
